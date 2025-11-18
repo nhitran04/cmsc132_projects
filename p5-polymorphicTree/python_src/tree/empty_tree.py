@@ -12,8 +12,8 @@ contains no entries.
 
 This class is a singleton class: since all empty search trees are the same,
 there is no need for multiple instances of this class. Instead, a single
-instance of the class is created and made available through the static field
-SINGLETON.
+instance of the class is created and made available through the class method
+get_instance().
 
 The constructor is private, preventing other code from mistakenly creating
 additional instances of the class.
@@ -21,7 +21,7 @@ additional instances of the class.
 
 class EmptyTree(Tree[K, V]):
     """
-    This static field references the one and only instance of this class.
+    This class variable references the one and only instance of this class.
     We won't declare generic types for this one, so the same singleton
     can be used for any kind of EmptyTree.
     """

@@ -35,9 +35,9 @@ class Tree(ABC, Generic[K, V]):
         
         This method returns a reference to a Tree that represents the updated
         value. In many, but not all cases, the method may just return a
-        reference to this. This method is annotated @CheckReturnValue because
-        you have to pay attention to the return value; if you simply invoke insert on
-        a Tree and ignore the return value, your code is almost certainly wrong.
+        reference to this. You have to pay attention to the return value;
+        if you simply invoke insert on a Tree and ignore the return value,
+        your code is almost certainly wrong.
         
         :param key: Key
         :param value: Value that the key maps to
@@ -53,9 +53,9 @@ class Tree(ABC, Generic[K, V]):
         
         This method returns a reference to a Tree that represents the updated
         value. In many, but not all cases, the method may just return a
-        reference to this. This method is annotated @CheckReturnValue because
-        you have to pay attention to the return value; if you simply invoke delete on
-        a Tree and ignore the return value, your code is almost certainly wrong.
+        reference to this. You have to pay attention to the return value;
+        if you simply invoke delete on a Tree and ignore the return value,
+        your code is almost certainly wrong.
         
         :param key: Key
         :return: updated tree
