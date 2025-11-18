@@ -67,7 +67,7 @@ class EmptyTree(Tree[K, V]):
         # TODO
         pass
     
-    def add_keys_to_collection(self, c: Collection[K]) -> None:
+    def add_keys_to_collection(self, collection: Collection[K]) -> None:
         return
     
     def sub_tree(self, from_key: K, to_key: K) -> Tree[K, V]:
@@ -78,11 +78,11 @@ class EmptyTree(Tree[K, V]):
         # TODO
         pass
     
-    def inorder_traversal(self, p: TraversalTask[K, V]) -> None:
+    def inorder_traversal(self, task: TraversalTask[K, V]) -> None:
         # TODO
         pass
     
-    def right_root_left_traversal(self, p: TraversalTask[K, V]) -> None:
+    def right_root_left_traversal(self, task: TraversalTask[K, V]) -> None:
         # TODO
         pass
 

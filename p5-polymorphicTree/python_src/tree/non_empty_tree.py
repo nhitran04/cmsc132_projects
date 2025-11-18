@@ -57,10 +57,10 @@ class NonEmptyTree(Tree[K, V]):
         # TODO
         pass
     
-    def add_keys_to_collection(self, c: Collection[K]) -> None:
-        self.left.add_keys_to_collection(c)
-        c.add(self.key)
-        self.right.add_keys_to_collection(c)
+    def add_keys_to_collection(self, collection: Collection[K]) -> None:
+        self.left.add_keys_to_collection(collection)
+        collection.add(self.key)
+        self.right.add_keys_to_collection(collection)
     
     def sub_tree(self, from_key: K, to_key: K) -> Tree[K, V]:
         # TODO
@@ -70,10 +70,10 @@ class NonEmptyTree(Tree[K, V]):
         # TODO
         pass
     
-    def inorder_traversal(self, p: TraversalTask[K, V]) -> None:
+    def inorder_traversal(self, task: TraversalTask[K, V]) -> None:
         # TODO
         pass
     
-    def right_root_left_traversal(self, p: TraversalTask[K, V]) -> None:
+    def right_root_left_traversal(self, task: TraversalTask[K, V]) -> None:
         # TODO
         pass

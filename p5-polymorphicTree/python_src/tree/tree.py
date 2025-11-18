@@ -92,10 +92,12 @@ class Tree(ABC, Generic[K, V]):
         pass
     
     @abstractmethod
-    def add_keys_to_collection(self, c: Collection[K]) -> None:
+    def add_keys_to_collection(self, collection: Collection[K]) -> None:
         """
-        Add all keys bound in this tree to the collection c.
+        Add all keys bound in this tree to the collection.
         The elements can be added in any order.
+        
+        :param collection: collection to add keys to
         """
         pass
     
@@ -122,21 +124,21 @@ class Tree(ABC, Generic[K, V]):
         pass
     
     @abstractmethod
-    def inorder_traversal(self, p: TraversalTask[K, V]) -> None:
+    def inorder_traversal(self, task: TraversalTask[K, V]) -> None:
         """
         Performs the specified task on the tree using an inorder traversal.
         
-        :param p: object defining task
+        :param task: object defining task
         """
         pass
     
     @abstractmethod
-    def right_root_left_traversal(self, p: TraversalTask[K, V]) -> None:
+    def right_root_left_traversal(self, task: TraversalTask[K, V]) -> None:
         """
         Performs the specified task on the tree using a right tree, root, left tree
         traversal.
         
-        :param p: object defining task
+        :param task: object defining task
         """
         pass
 

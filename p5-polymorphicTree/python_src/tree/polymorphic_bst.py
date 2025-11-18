@@ -18,23 +18,23 @@ class PolymorphicBST(Generic[K, V]):
     def __init__(self):
         self.root: Tree[K, V] = EmptyTree.get_instance()
     
-    def get(self, k: K) -> V:
+    def get(self, key: K) -> V:
         """
         Find the value the key is mapped to
         
-        :param k: Search key
-        :return: value k is mapped to, or None if there is no mapping for the key
+        :param key: Search key
+        :return: value key is mapped to, or None if there is no mapping for the key
         """
-        return self.root.search(k)
+        return self.root.search(key)
     
-    def put(self, k: K, v: V) -> None:
+    def put(self, key: K, value: V) -> None:
         """
         Update the mapping for the key
         
-        :param k: key value
-        :param v: value the key should be bound to
+        :param key: key value
+        :param value: value the key should be bound to
         """
-        self.root = self.root.insert(k, v)
+        self.root = self.root.insert(key, value)
     
     def size(self) -> int:
         """
@@ -44,19 +44,19 @@ class PolymorphicBST(Generic[K, V]):
         """
         return self.root.size()
     
-    def remove(self, k: K) -> None:
+    def remove(self, key: K) -> None:
         """
         Remove any existing binding for a key
         
-        :param k: key to be removed from the map
+        :param key: key to be removed from the map
         """
-        self.root = self.root.delete(k)
+        self.root = self.root.delete(key)
     
     def key_set(self) -> Set[K]:
         """
-        Return a Set of all the keys in the map
+        Return a set of all the keys in the map
         
-        :return: Set of all the keys in the map
+        :return: set of all the keys in the map
         """
         result = set()
         self.root.add_keys_to_collection(result)
@@ -97,16 +97,16 @@ class PolymorphicBST(Generic[K, V]):
     
     def sub_map(self, from_key: K, to_key: K) -> 'PolymorphicBST[K, V]':
         """
-        Return subset of TreeMap between the values from_key-to_key. It will
+        Return subset of tree between the values from_key-to_key. It will
         include from_key and to_key if they are found in the original map.
         The values for from_key and to_key do not actually need to be in the map.
         You can assume that from_key is less than or equal to to_key.
         
-        :return: TreeMap consisting of subset of SearchTreeMap
+        :return: PolymorphicBST consisting of subset of this tree
         """
-        s_tree = PolymorphicBST()
-        s_tree.root = self.root.sub_tree(from_key, to_key)
-        return s_tree
+        sub_tree = PolymorphicBST()
+        sub_tree.root = self.root.sub_tree(from_key, to_key)
+        return sub_tree
     
     def clear(self) -> None:
         """
@@ -122,19 +122,19 @@ class PolymorphicBST(Generic[K, V]):
         """
         return self.root.height()
     
-    def inorder_traversal(self, p: TraversalTask[K, V]) -> None:
+    def inorder_traversal(self, task: TraversalTask[K, V]) -> None:
         """
         Performs an inorder traversal applying the task to each tree key,value pair.
         
-        :param p: traversal task
+        :param task: traversal task
         """
-        self.root.inorder_traversal(p)
+        self.root.inorder_traversal(task)
     
-    def right_root_left_traversal(self, p: TraversalTask[K, V]) -> None:
+    def right_root_left_traversal(self, task: TraversalTask[K, V]) -> None:
         """
         Performs the specified task on the tree using a right tree, root, left tree
         traversal.
         
-        :param p: object defining task
+        :param task: object defining task
         """
-        self.root.right_root_left_traversal(p)
+        self.root.right_root_left_traversal(task)
