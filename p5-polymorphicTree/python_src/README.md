@@ -14,7 +14,7 @@ python_src/
 │   ├── polymorphic_bst.py         # Main BST wrapper class
 │   ├── tree_is_empty_exception.py # Custom exception
 │   ├── traversal_task.py          # Abstract traversal task interface
-│   └── place_keys_values_in_arraylists.py  # Traversal task implementation
+│   └── place_keys_values_in_lists.py  # Traversal task implementation
 ├── tests/                         # Test files
 │   ├── __init__.py
 │   ├── test_tree.py              # Main test cases
@@ -55,6 +55,40 @@ cd python_src
 pytest tests/test_tree.py -v
 ```
 
+## Project Specification
+
+### Overview
+
+This project implements recursive tree functions based on a polymorphic tree class. You will practice error handling, recursion, and polymorphism.
+
+### Design
+
+Notice that the `insert` and `delete` methods on `Tree` objects return references to `Tree` objects. In many cases, these functions may return a reference to the `self` object. However, in some cases they can't. For example, `EmptyTree.get_instance().insert("a", "1")` has to return an instance of a `NonEmptyTree` object.
+
+### What to Modify
+
+You only need to modify `EmptyTree`, `NonEmptyTree`, and `PlaceKeysValuesInLists`. **You may not add any classes**.
+
+### Implementation Restrictions
+
+- You may not use any form of looping construct (no `for`, `while`, etc.)
+- You may not use arrays (use lists instead)
+- You may not explicitly check a `Tree` to see whether it is an `EmptyTree` or `NonEmptyTree`
+- Your `EmptyTree` and `NonEmptyTree` implementations may not have any comparisons against the `None` value
+- You should not need to do any casting for this project. If you are casting, you are probably not using polymorphism correctly
+- If you insert multiple values with the same key, only the value associated with the most recent insertion will be saved
+- You may not add any public methods
+- You may not check whether a tree is empty by using comparisons similar to:
+  - `left == EmptyTree.get_instance()`
+  - `tree.size() == 0`
+  - Other comparisons similar to the above
+- You are expected to use polymorphism (and exception handling, where appropriate) to handle the differences between empty and nonempty trees
+- You may not use `isinstance()` or `type()` to check tree types
+- The `delete` method must use the standard BST deletion approach (find min in right subtree or max in left subtree). You may not implement delete by creating a new tree and inserting all the keys from the source tree except the one you want to delete
+- For the `sub_tree` method you may not create an empty tree and traverse the whole tree inserting only those entries within the specified range. If a simple check will tell you that an entire subtree can be excluded, your implementation should not traverse that subtree
+
+**Note:** The above restrictions do not apply to your test cases; you may write them however you wish.
+
 ## Implementation Notes
 
 ### TODO Items
@@ -84,7 +118,7 @@ The following methods need to be implemented (marked with `# TODO`):
 - `inorder_traversal()`
 - `right_root_left_traversal()`
 
-**PlaceKeysValuesInArrayLists:**
+**PlaceKeysValuesInLists:**
 - `perform_task()`
 
 ## Usage Example

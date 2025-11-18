@@ -1,0 +1,148 @@
+Expected Output: Basic Tree Operations
+========================================
+
+Test: Creating an empty tree
+-----------------------------
+tree = PolymorphicBST()
+tree.size()
+>>> 0
+
+Test: Inserting elements
+------------------------
+tree.put(2, "Two")
+tree.put(1, "One")
+tree.put(3, "Three")
+tree.size()
+>>> 3
+
+Test: Retrieving values
+-----------------------
+tree.get(1)
+>>> "One"
+
+tree.get(2)
+>>> "Two"
+
+tree.get(3)
+>>> "Three"
+
+tree.get(8)
+>>> None
+
+Test: Updating existing key
+---------------------------
+tree.put(1, "OneUpdated")
+tree.get(1)
+>>> "OneUpdated"
+
+tree.size()
+>>> 3
+
+Test: Getting min and max
+--------------------------
+tree.get_min()
+>>> 1
+
+tree.get_max()
+>>> 3
+
+Test: Empty tree exceptions
+----------------------------
+empty_tree = PolymorphicBST()
+empty_tree.get_min()
+>>> KeyError: 'No such element'
+
+empty_tree.get_max()
+>>> KeyError: 'No such element'
+
+empty_tree.get("a")
+>>> None
+
+Test: Tree height
+-----------------
+tree = PolymorphicBST()
+tree.put(2, "Two")
+tree.put(1, "One")
+tree.put(3, "Three")
+tree.put(4, "Four")
+tree.height()
+>>> 3
+
+Test: Inorder traversal
+-----------------------
+tree = PolymorphicBST()
+tree.put(2, "Two")
+tree.put(1, "One")
+tree.put(3, "Three")
+tree.put(4, "Four")
+task = PlaceKeysValuesInLists()
+tree.inorder_traversal(task)
+task.get_keys()
+>>> [1, 2, 3, 4]
+
+task.get_values()
+>>> ['One', 'Two', 'Three', 'Four']
+
+Test: Clearing tree
+-------------------
+tree.clear()
+tree.size()
+>>> 0
+
+Test: Delete operation
+----------------------
+tree = PolymorphicBST()
+tree.put(5, "Five")
+tree.put(3, "Three")
+tree.put(7, "Seven")
+tree.put(2, "Two")
+tree.put(4, "Four")
+tree.put(6, "Six")
+tree.put(8, "Eight")
+tree.size()
+>>> 7
+
+tree.remove(3)
+tree.size()
+>>> 6
+
+tree.get(3)
+>>> None
+
+tree.get(2)
+>>> "Two"
+
+tree.get(4)
+>>> "Four"
+
+Test: Key set
+-------------
+tree = PolymorphicBST()
+tree.put(5, "Five")
+tree.put(3, "Three")
+tree.put(7, "Seven")
+tree.key_set()
+>>> {3, 5, 7}
+
+Test: Sub map
+-------------
+tree = PolymorphicBST()
+tree.put(1, "One")
+tree.put(2, "Two")
+tree.put(3, "Three")
+tree.put(4, "Four")
+tree.put(5, "Five")
+sub = tree.sub_map(2, 4)
+sub.size()
+>>> 3
+
+sub.get_min()
+>>> 2
+
+sub.get_max()
+>>> 4
+
+task = PlaceKeysValuesInLists()
+sub.inorder_traversal(task)
+task.get_keys()
+>>> [2, 3, 4]

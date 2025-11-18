@@ -1,0 +1,93 @@
+Expected Output: Tree Traversal Operations
+===========================================
+
+Tree Structure for Examples:
+         5
+       /   \
+      3     7
+     / \   / \
+    2   4 6   8
+
+Inorder Traversal (Left-Root-Right)
+------------------------------------
+tree = PolymorphicBST()
+tree.put(5, "Five")
+tree.put(3, "Three")
+tree.put(7, "Seven")
+tree.put(2, "Two")
+tree.put(4, "Four")
+tree.put(6, "Six")
+tree.put(8, "Eight")
+
+task = PlaceKeysValuesInLists()
+tree.inorder_traversal(task)
+task.get_keys()
+>>> [2, 3, 4, 5, 6, 7, 8]
+
+task.get_values()
+>>> ['Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight']
+
+Right-Root-Left Traversal (Right-Root-Left)
+--------------------------------------------
+task = PlaceKeysValuesInLists()
+tree.right_root_left_traversal(task)
+task.get_keys()
+>>> [8, 7, 6, 5, 4, 3, 2]
+
+task.get_values()
+>>> ['Eight', 'Seven', 'Six', 'Five', 'Four', 'Three', 'Two']
+
+
+Single Node Tree:
+      5
+
+Inorder Traversal:
+>>> [5]
+
+Right-Root-Left Traversal:
+>>> [5]
+
+
+Left-Skewed Tree:
+    5
+   /
+  4
+ /
+3
+/
+2
+/
+1
+
+Inorder Traversal:
+>>> [1, 2, 3, 4, 5]
+
+Right-Root-Left Traversal:
+>>> [5, 4, 3, 2, 1]
+
+
+Right-Skewed Tree:
+1
+ \
+  2
+   \
+    3
+     \
+      4
+       \
+        5
+
+Inorder Traversal:
+>>> [1, 2, 3, 4, 5]
+
+Right-Root-Left Traversal:
+>>> [5, 4, 3, 2, 1]
+
+
+Empty Tree:
+
+Inorder Traversal:
+>>> []
+
+Right-Root-Left Traversal:
+>>> []

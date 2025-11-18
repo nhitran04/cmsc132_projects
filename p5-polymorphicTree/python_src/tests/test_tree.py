@@ -1,5 +1,5 @@
 import pytest
-from tree import PolymorphicBST, PlaceKeysValuesInArrayLists
+from tree import PolymorphicBST, PlaceKeysValuesInLists
 
 
 def test_basics():
@@ -41,7 +41,7 @@ def test_height_inorder_clear():
     ptree.put(4, "Four")
     assert ptree.height() == 3
     
-    task = PlaceKeysValuesInArrayLists()
+    task = PlaceKeysValuesInLists()
     ptree.inorder_traversal(task)
     assert str(task.get_keys()) == "[1, 2, 3, 4]"
     assert str(task.get_values()) == "['One', 'Two', 'Three', 'Four']"

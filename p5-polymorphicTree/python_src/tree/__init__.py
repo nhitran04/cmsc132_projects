@@ -8,7 +8,7 @@ from tree.tree import Tree
 from tree.empty_tree import EmptyTree
 from tree.non_empty_tree import NonEmptyTree
 from tree.polymorphic_bst import PolymorphicBST
-from tree.place_keys_values_in_arraylists import PlaceKeysValuesInArrayLists
+from tree.place_keys_values_in_lists import PlaceKeysValuesInLists
 
 __all__ = [
     'TreeIsEmptyException',
@@ -17,5 +17,5 @@ __all__ = [
     'EmptyTree',
     'NonEmptyTree',
     'PolymorphicBST',
-    'PlaceKeysValuesInArrayLists'
+    'PlaceKeysValuesInLists'
 ]
