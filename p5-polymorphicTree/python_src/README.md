@@ -19,6 +19,10 @@ python_src/
 │   ├── __init__.py
 │   ├── test_tree.py              # Main test cases
 │   └── test_student.py           # Student test placeholder
+├── expected_outputs/              # Expected output examples
+│   ├── expected_output_basic.txt      # Basic operations examples
+│   ├── expected_output_tests.txt      # Test execution examples
+│   └── expected_output_traversals.txt # Traversal examples
 ├── requirements.txt              # Python dependencies
 └── README.md                     # This file
 ```
@@ -118,3 +122,10 @@ The test suite includes:
 - Clear functionality
 
 Add your own tests in `tests/test_student.py`.
+
+## Expected Outputs
+
+The `expected_outputs/` folder contains example outputs for reference:
+- `expected_output_basic.txt` - Expected results for basic tree operations
+- `expected_output_tests.txt` - Expected pytest output and test descriptions
+- `expected_output_traversals.txt` - Expected results for tree traversals
