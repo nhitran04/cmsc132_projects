@@ -46,15 +46,15 @@ class EmptyTree(Tree[K, V]):
         pass
     
     def search(self, key: K) -> Optional[V]:
-        # TODO
+        return None
         pass
     
-    def insert(self, key: K, value: V) -> 'NonEmptyTree[K, V]':
-        # TODO
+    def insert(self, key: K, value: V) -> 'NonEmptyTree[K, V]': #if supposed to return a nonempty tree then 
+        ptree = NonEmptyTree()
+        return ptree
         pass
     
-    def delete(self, key: K) -> Tree[K, V]:
-        # TODO
+    def delete(self, key: K) -> Tree[K, V]:    
         pass
     
     def max(self) -> K:
@@ -64,7 +64,7 @@ class EmptyTree(Tree[K, V]):
         raise TreeIsEmptyException()
     
     def size(self) -> int:
-        # TODO
+        return 0
         pass
     
     def add_keys_to_collection(self, collection: Collection[K]) -> None:
